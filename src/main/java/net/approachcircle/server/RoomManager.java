@@ -29,10 +29,8 @@ public class RoomManager {
         if (rooms.get(id) == null) {
             throw new RoomException("this room no longer exists", id);
         }
-        //System.out.println("add client to room");
         rooms.get(id).add(client);
         System.out.printf("client %s joined room '%s'%n", client.getRemoteAddress(), id);
-        //System.out.println("send event");
         rooms.get(id).get(0).sendEvent("opponent-joined");
     }
 

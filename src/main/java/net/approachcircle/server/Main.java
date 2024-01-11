@@ -8,7 +8,6 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         Configuration config = new Configuration();
-        // config.setHostname("localhost");
         config.setPort(1909);
         SocketIOServer server = new SocketIOServer(config);
         server.addConnectListener(client -> System.out.printf("client connected at %s%n", client.getRemoteAddress()));
