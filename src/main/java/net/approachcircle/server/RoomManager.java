@@ -2,11 +2,10 @@ package net.approachcircle.server;
 
 import com.corundumstudio.socketio.SocketIOClient;
 
-import java.net.Socket;
 import java.util.*;
 
 public class RoomManager {
-    private Dictionary<String, List<SocketIOClient>> rooms;
+    private final Dictionary<String, List<SocketIOClient>> rooms;
     private static RoomManager instance;
 
     private RoomManager() {
