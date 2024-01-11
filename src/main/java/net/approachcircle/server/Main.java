@@ -22,6 +22,7 @@ public class Main {
             String code = generateRoomCode();
             client.joinRoom(code);
             RoomManager.getInstance().createRoom(code);
+            RoomManager.getInstance().joinRoom(code, client);
             ackSender.sendAckData(code);
         }));
         server.addEventListener("join-game", String.class, ((client, roomCode, ackSender) -> {
