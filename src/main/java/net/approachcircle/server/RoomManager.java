@@ -26,7 +26,7 @@ public class RoomManager {
 
     public void joinRoom(String id, SocketIOClient client) throws RoomException {
         if (rooms.get(id) == null) {
-            throw new RoomException("this room no longer exists", id);
+            throw new RoomException("this room does not exist", id);
         }
         rooms.get(id).add(client);
         System.out.printf("client %s joined room '%s'%n", client.getRemoteAddress(), id);
@@ -35,7 +35,7 @@ public class RoomManager {
 
     public void leaveRoom(String id, SocketIOClient client) throws RoomException {
         if (rooms.get(id) == null) {
-            throw new RoomException("this room no longer exists", id);
+            throw new RoomException("this room does not exist", id);
         }
         rooms.get(id).remove(client);
         System.out.printf("client %s left room '%s'%n", client.getRemoteAddress(), id);
