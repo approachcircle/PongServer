@@ -29,7 +29,7 @@ public class Main {
             try {
                 RoomManager.getInstance().joinRoom(roomCode, client);
             } catch (RoomException e) {
-                ackSender.sendAckData(State.Error, e.toString());
+                ackSender.sendAckData(State.Error, e.getMessage());
                 return;
             }
             client.joinRoom(roomCode);
@@ -39,7 +39,7 @@ public class Main {
             try {
                 RoomManager.getInstance().leaveRoom(roomCode, client);
             } catch (RoomException e) {
-                ackSender.sendAckData(State.Error, e.toString());
+                ackSender.sendAckData(State.Error, e.getMessage());
                 return;
             }
             client.leaveRoom(roomCode);
