@@ -9,12 +9,12 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-public class NotificationServer implements Closeable {
+public class NotificationServerAccess implements Closeable {
     private URL url;
     private HttpURLConnection connection;
     private OutputStream stream;
 
-    public NotificationServer() {
+    public NotificationServerAccess() {
         try {
             url = new URL("https://ntfy.sh/ns1TVxOd3fPftcKq");
         } catch (MalformedURLException e) {

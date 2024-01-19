@@ -14,14 +14,14 @@ public class Main {
                 System.err.println("dumping all open rooms: ");
                 System.err.println(RoomManager.getInstance().dumpOpenRooms());
                 System.err.println("restarting...");
-                try (NotificationServer server = new NotificationServer()) {
+                try (NotificationServerAccess server = new NotificationServerAccess()) {
                     server.send(e.getMessage());
                 }
             }
             iterations++;
             if (iterations >= iteration_limit) {
                 System.err.println("iteration limit reached. quitting");
-                try (NotificationServer server = new NotificationServer()) {
+                try (NotificationServerAccess server = new NotificationServerAccess()) {
                     server.send("iteration limit reached. quitting");
                 }
                 break;
